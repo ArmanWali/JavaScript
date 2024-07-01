@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cart-Quantity</title>  
+    </head>
+    <body>
+        <button onclick="
+        console.log(`Cart Quantity: ${cartQuantity}`);
+        ">Show Quantity</button>
+        
+        <button onclick="
+        (cartQuantity<10) ? cartQuantity += 1 : alert('cart is full');
+        
+        ">Add to Cart</button>
+
+        <button onclick="
+        if (cartQuantity <=8 ){
+            cartQuantity += 2;
+        }
+        else if (cartQuantity === 9){
+            alert('The Cart can have maximum of 10 items\nPlease select one item more.');
+        }
+        else{
+            alert('The cart is full');
+        }
+        ">+2</button>
+
+        <button onclick="
+        if (cartQuantity <= 7){
+            cartQuantity += 3;
+        }
+        else if (cartQuantity === 8 || cartQuantity === 9){
+           if (cartQuantity===8){
+            alert('The Cart can have maximum of 10 items\nPlease Select two items more');
+           }
+           else{
+            alert('The Cart can have maximum of 10 items\nPlease Select one item more');
+           }
+           
+        }
+        else{
+            alert('The cart is full');
+        }
+        
+        ">+3</button>
+
+        <button onclick="
+        cartQuantity = 0;
+        console.log('Cart was reset');
+        ">Reset Cart</button>
+
+        <button onclick="
+        (cartQuantity>0) ? cartQuantity -= 1 : alert('Not enough items in the cart');
+
+        ">Remove from cart</button>
+
+        <button onclick="
+        if (cartQuantity >=2 ){
+            cartQuantity -= 2;
+        }
+        else if (cartQuantity === 1){
+            alert('The Cart can have minimum of 0 items\nPlease select one item more to remove.');
+        }
+        else{
+            alert('Not enough items in the cart');
+        }
+        ">-2</button>
+
+        <button onclick="
+        if (cartQuantity >= 3){
+            cartQuantity -= 3;
+        }
+        else if (cartQuantity === 2 || cartQuantity === 1){
+        if (cartQuantity===2){
+            alert('The Cart can have minimum of 0 items\nPlease Select two items more to remove');
+        }
+        else{
+            alert('The Cart can have minimum of 0 items\nPlease Select one item more to remove');
+        }
+        
+        }
+        else{
+            alert('Not enough items in the cart');
+        }
+
+        ">-3</button>
+
+
+
+     <script>
+        let cartQuantity = 0;
+     </script>
+    </body>
+</html>
