@@ -5,32 +5,104 @@
     </head>
     <body>
         <button onclick="
-            console.log(`Cart Quantity: ${cartQuantity}`);
-        ">Show Quantity</button>
-
-        <button onclick="
-        cartQuantity += 1;
         console.log(`Cart Quantity: ${cartQuantity}`);
+        ">Show Quantity</button>
+        
+        <button onclick="
+        (cartQuantity<10) ? update_Calculation(1) :full_cart();
+        
         ">Add to Cart</button>
 
         <button onclick="
-        cartQuantity += 2;
-        console.log(`Cart Quantity: ${cartQuantity}`);
+        if (cartQuantity <=8 ){
+            update_Calculation(2);
+        }
+        else if (cartQuantity === 9){
+            Not_enough_space('1');
+        }
+        else{
+            full_cart();
+        }
         ">+2</button>
 
         <button onclick="
-        cartQuantity += 3;
-        console.log(`Cart Quantity: ${cartQuantity}`);
+        if (cartQuantity <= 7){
+            update_Calculation(3);
+        }
+        else if (cartQuantity === 8 || cartQuantity === 9){
+           if (cartQuantity===8){
+            Not_enough_space('2');
+           }
+           else{
+            Not_enough_space('1');
+           }
+           
+        }
+        else{
+            full_cart();
+        }
+        
         ">+3</button>
 
         <button onclick="
         cartQuantity = 0;
         console.log('Cart was reset');
-        console.log(`Cart Quantity: ${cartQuantity}`);
         ">Reset Cart</button>
+
+        <button onclick="
+        (cartQuantity>0) ? update_Calculation(-1) :         Not_enough_items();
+
+        ">Remove from cart</button>
+
+        <button onclick="
+        if (cartQuantity >=2 ){
+            update_Calculation(-2);
+        }
+        else if (cartQuantity === 1){
+            select_less('1');
+        }
+        else{
+            Not_enough_items();
+        }
+        ">-2</button>
+
+        <button onclick="
+        if (cartQuantity >= 3){
+            update_Calculation(-3);
+        }
+        else if (cartQuantity === 2 || cartQuantity === 1){
+        if (cartQuantity===2){
+            select_less('2');
+        }
+        else{
+            select_less('1');
+        }
+
+        }
+        else{
+            Not_enough_items();
+        }
+
+        ">-3</button>
+
      <script>
         let cartQuantity = 0;
-
+        function update_Calculation(Quantity){
+            cartQuantity += Quantity;
+        }
+        function full_cart(){
+            alert('The cart is full');
+            return;
+        }
+        function Not_enough_space(Quantity){
+            alert(`The Cart can have maximum of 10 items\nPlease select ${Quantity} item more.`);
+        }
+        function Not_enough_items(){
+            alert('Not enough items in the cart');
+        }
+        function select_less(Quantity){
+            alert(`The Cart can have minimum of 0 items\nPlease Select ${Quantity} item more to remove`);
+        }
      </script>
     </body>
 </html>
