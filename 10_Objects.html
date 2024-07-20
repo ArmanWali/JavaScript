@@ -38,13 +38,29 @@
           console.log(product2.rating.stars);
           product2.fun();
 
-          console.log(JSON.stringify(product2)); 
+          console.log(JSON.stringify(product2));  //JSON stands for (JavaScript Object Notation), it's a syntax and is more universal means that it can be understood by almost all programming languages
 
           const jsonString = JSON.stringify(product2)
           
           console.log(JSON.parse(jsonString))
+
+
+          console.log('hello'.length); // gives the length of string
+          console.log('hello'.toUpperCase()); // uppercase the string
+
+          const object1 = {  // the object only reference to the variables inside it, and the value of variables inside object is stored somewhere in memory of computer
+            message: 'hello'   // instead of using const with object1 we still can change the value of variable message becuase the const is only used with reference
+          }
+
+          const object2 = object1; // this doesn't copy the object1 to the object2 but only reference to it that's why javascipt is fast
+
+          const object3 = {
+            message: 'hello'
+          }
+          console.log(object3 === object1); //this will result in false although they have the same values in it that's because they are only references
         </script>
     </body>
 </html>
 
+<!--320th minute in video--> 
  
