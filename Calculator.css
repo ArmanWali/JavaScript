@@ -1,0 +1,29 @@
+.divBox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-color: white;
+}
+body{
+    background-color: black;
+}
+button{
+    background-color: rgb(54, 52, 52);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 10px 30px 10px 30px;
+}
+
+.long-buttons{
+    padding: 10px 27px 10px 27px;
+}
+
+.ac-button{
+    padding: 10px 25px 10px 25px;
+    background-color: rgb(175, 45, 45);
+}
+
+.orange-buttons{
+    background-color: rgb(255, 175, 25);
+}

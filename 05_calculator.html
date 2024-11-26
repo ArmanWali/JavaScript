@@ -1,66 +1,113 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Calculator</title>
-    </head>
-    <body>
+
+<head>
+    <title>
+        Calculator
+    </title>
+
+</head>
+<link rel="stylesheet" href="Calculator.css">
+
+<body>
+    <div class="divBox">
+        <div>
         <p>
-            <button onclick="
-                update_Calculation('7');
-                ">7</button>
+            <button class="ac-button" onclick="sum = ''; console.log(sum)">
+                AC
+            </button>
 
-            <button onclick="
-                update_Calculation('8');
-            ">8</button>
-    
-            <button onclick="
-                update_Calculation('9');
-            ">9</button>
+            <button class="long-buttons" onclick="sum += ' % '; console.log(sum)">
+                &percnt;
+            </button>
+            
+            <button onclick="sum += ' ^ '; console.log(sum)">
+                ^
+            </button>
+
+            <button class="orange-buttons" onclick="sum += ' / '; console.log(sum)">
+                &divide;
+            </button>
         </p>
+
         <p>
-            <button onclick="
-                update_Calculation('4');
-                ">4</button>
+            <button onclick="sum += '7'; console.log(sum)">
+                7
+            </button>
 
-            <button onclick="
-                update_Calculation('5');
-            ">5</button>
-    
-            <button onclick="
-                update_Calculation('6');
-                ">6</button>
+            <button onclick="sum += '8'; console.log(sum)">
+                8
+            </button>
+
+            <button onclick="sum += '9'; console.log(sum)">
+                9
+            </button>
+
+            <button class="orange-buttons" onclick="sum += ' * '; console.log(sum)">
+                &#xd7;
+            </button>
         </p>
+
         <p>
-            <button onclick="
-                update_Calculation('1');
-                ">1</button>
+            <button onclick="sum += '4'; console.log(sum)">
+                4
+            </button>
 
-            <button onclick="
-                update_Calculation('2');
-            ">2</button>
-    
-            <button onclick="
-                update_Calculation('3');
-            ">3</button>
+            <button onclick="sum += '5'; console.log(sum)">
+                5
+            </button>
+
+            <button onclick="sum += '6'; console.log(sum)">
+                6
+            </button>
+
+            <button class="orange-buttons" onclick="sum += ' - '; console.log(sum)">
+                &#x2212;
+            </button>
         </p>
+
         <p>
-            <button onclick="
-                update_Calculation('0');
-                ">0</button>
+            <button onclick="sum += '1'; console.log(sum)">
+                1
+            </button>
 
-            <button onclick="
-                update_Calculation('+');
-                ">+</button>
+            <button onclick="sum += '2'; console.log(sum)">
+                2
+            </button>
 
-        <button onclick="calculation = eval(calculation) ;
-         console.log(calculation)">=</button>
+            <button onclick="sum += '3'; console.log(sum)">
+                3
+            </button>
+
+            <button class="orange-buttons" onclick="sum += ' + '; console.log(sum)">
+                +
+            </button>
         </p>
-        
-        <script>
-            let calculation = "";
-            function update_Calculation(digit){
-                calculation += `${digit}` ; console.log(calculation)
-            }
-        </script>
-    </body>
+
+        <p>
+            <button onclick="sum += '0'; console.log(sum)">
+                0
+            </button>
+
+            <button class="long-buttons" onclick="sum += '00'; console.log(sum)">
+                00
+            </button>
+
+            <button onclick="sum += '.'; console.log(sum)">
+                .
+            </button>
+
+            <button class="orange-buttons" onclick="sum = eval(sum); console.log(sum)">
+                =
+            </button>
+        </p>
+    </div>
+    </div>
+
+    <script>
+        let sum = '';
+    </script>
+
+</body>
+
 </html>
