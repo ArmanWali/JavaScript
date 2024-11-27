@@ -11,17 +11,20 @@
 
 <body>
     <div class="divBox">
-        <div>
+        <div class="input-div">
+            <input type="text" class="input-box" value="" disabled>
+        </div>
+        <div class="buttons-div">
         <p>
             <button class="ac-button" onclick="sum = ''; console.log(sum)">
                 AC
             </button>
 
-            <button class="long-buttons" onclick="sum += ' % '; console.log(sum)">
+            <button class="grey-button" onclick="sum += ' % '; console.log(sum)">
                 &percnt;
             </button>
             
-            <button onclick="sum += ' ^ '; console.log(sum)">
+            <button class="grey-button-power" onclick="sum += ' ^ '; console.log(sum)">
                 ^
             </button>
 
@@ -93,7 +96,7 @@
                 00
             </button>
 
-            <button onclick="sum += '.'; console.log(sum)">
+            <button class="dot-button" onclick="sum += '.'; console.log(sum)">
                 .
             </button>
 
