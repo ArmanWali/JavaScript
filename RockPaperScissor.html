@@ -28,13 +28,27 @@
             Scissors 
         </button>
 
+        <p class="js-result">
+
+        </p>
+
+        <p class="js-moves"></p>
+
+        <p class="js-score"></p>
+
         <button onclick="
         score.Wins = 0;
         score.Losses = 0;
         score.Ties = 0;
+        localStorage.removeItem('score');
+        ScoreFunction();
         ">
             Reset Score
         </button>
+
+        <script>
+            ScoreFunction();
+        </script>
         
     </body>
 </html>
