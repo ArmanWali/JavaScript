@@ -7,48 +7,57 @@
     </head>
 
     <body>
-        <p> 
-            Rock Paper Scissors
-        </p>
-
-        <button onclick="
-        PlayGame('Rock');
-        ">Rock
-        </button>
-
-        <button onclick="
-       PlayGame('Paper');
-        ">
-            Paper
-        </button>
-
-        <button onclick="
-        PlayGame('Scissors');
-         ">
-            Scissors 
-        </button>
-
-        <p class="js-result">
-
-        </p>
-
-        <p class="js-moves"></p>
-
-        <p class="js-score"></p>
-
-        <button onclick="
-        score.Wins = 0;
-        score.Losses = 0;
-        score.Ties = 0;
-        localStorage.removeItem('score');
-        ScoreFunction();
-        ">
-            Reset Score
-        </button>
-
-        <script>
-            ScoreFunction();
-        </script>
+        <div class="div-box">
         
+            <div>
+                <p class="game-title"> 
+                    Rock Paper Scissors
+                </p>
+            </div>
+
+            <div>
+                <button class="move-button" onclick="
+                PlayGame('Rock');
+                "><img src="/Images/Rock-emoji.png" class="js-image">
+                </button>
+
+                <button class="move-button" onclick="
+                PlayGame('Paper');
+                ">
+                    <img src="/Images/Paper-emoji.png" class="js-image">
+                </button>
+
+                <button class="move-button" onclick="
+                PlayGame('Scissors');
+                ">
+                    <img src="/Images/Scissors-emoji.png" class="js-image"> 
+                </button>
+            </div>
+
+            <div>
+                <p class="js-result"></p>
+            </div>
+            
+            <div>
+                <p class="js-moves"></p>
+            </div>
+            
+            <div>
+                <p class="js-score"></p>
+            </div>
+        
+            <div>
+                <button class="reset-button" onclick="
+                    score.Wins = 0;
+                    score.Losses = 0;
+                    score.Ties = 0;
+                    localStorage.removeItem('score');
+                    ScoreFunction();
+                    ">
+                        Reset Score
+                </button>
+            </div>
+        
+    </div>
     </body>
 </html>

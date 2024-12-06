@@ -22,6 +22,8 @@
             Reset
         </button>
 
+        <p class="js-result"></p>
+
         <script>
             let score = JSON.parse(localStorage.getItem('score')) || {
                     wins: 0,
@@ -70,8 +72,10 @@
 
                 localStorage.setItem('score', JSON.stringify(score));
 
-                alert(`You picked ${playerMove}. Coin Landed on ${computerMove}. ${result}
-Wins: ${score.wins}, Losses: ${score.losses}`)
+                const resultElement = document.querySelector('.js-result');
+                resultElement.innerHTML = `You picked ${playerMove}. Coin Landed on ${computerMove}. <br>
+                ${result} <br>
+Wins: ${score.wins}, Losses: ${score.losses}`
                 
     }
 

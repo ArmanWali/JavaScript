@@ -3,8 +3,8 @@
 
 <head>
     <title>Calculator</title>
+    <link rel="stylesheet" href="Calculator.css" >
 </head>
-<link rel="stylesheet" href="./Calculator.css">
 
 <body>
     <div class="divBox">
@@ -12,46 +12,37 @@
             <input type="text" class="input-box" readonly>
         </div>
         <div class="buttons-div">
-            <p>
-                <button class="ac-button" onclick="clearInput()">AC</button>
-                <button class="grey-button" onclick="appendToSum('%')">&percnt;</button>
-                <button class="grey-button-power" onclick="appendToSum('^')">^</button>
-                <button class="orange-buttons" onclick="appendToSum('/')">&divide;</button>
-            </p>
+            <button class="ac-button" onclick="clearInput()">AC</button>
+            <button class="grey-button" onclick="appendToSum('%')">%</button>
+            <button class="grey-button" onclick="appendToSum('^')">^</button>
+            <button class="orange-buttons" onclick="appendToSum('/')">&divide;</button>
 
-            <p>
-                <button onclick="appendToSum('7')">7</button>
-                <button onclick="appendToSum('8')">8</button>
-                <button onclick="appendToSum('9')">9</button>
-                <button class="orange-buttons" onclick="appendToSum('*')">&#xd7;</button>
-            </p>
+            <button onclick="appendToSum('7')">7</button>
+            <button onclick="appendToSum('8')">8</button>
+            <button onclick="appendToSum('9')">9</button>
+            <button class="orange-buttons" onclick="appendToSum('*')">&times;</button>
 
-            <p>
-                <button onclick="appendToSum('4')">4</button>
-                <button onclick="appendToSum('5')">5</button>
-                <button onclick="appendToSum('6')">6</button>
-                <button class="orange-buttons" onclick="appendToSum('-')">&#x2212;</button>
-            </p>
+            <button onclick="appendToSum('4')">4</button>
+            <button onclick="appendToSum('5')">5</button>
+            <button onclick="appendToSum('6')">6</button>
+            <button class="orange-buttons" onclick="appendToSum('-')">&minus;</button>
 
-            <p>
-                <button onclick="appendToSum('1')">1</button>
-                <button onclick="appendToSum('2')">2</button>
-                <button onclick="appendToSum('3')">3</button>
-                <button class="orange-buttons" onclick="appendToSum('+')">+</button>
-            </p>
+            <button onclick="appendToSum('1')">1</button>
+            <button onclick="appendToSum('2')">2</button>
+            <button onclick="appendToSum('3')">3</button>
+            <button class="orange-buttons" onclick="appendToSum('+')">+</button>
 
-            <p>
-                <button onclick="appendToSum('0')">0</button>
-                <button class="long-buttons" onclick="appendToSum('00')">00</button>
-                <button class="dot-button" onclick="appendToSum('.')">.</button>
-                <button class="orange-buttons" onclick="calculateResult()">=</button>
-            </p>
+            <button onclick="appendToSum('0')">0</button>
+            <button onclick="appendToSum('00')">00</button>
+            <button onclick="appendToSum('.')">.</button>
+            <button class="orange-buttons" onclick="calculateResult()">=</button>
         </div>
     </div>
 
     <script>
-        let sum = ''; 
-        let isResultShown = false; 
+        let sum = '';
+        let isResultShown = false;
+
         function appendToSum(value) {
             if (isResultShown) {
                 sum = '';
@@ -63,9 +54,10 @@
 
         function calculateResult() {
             try {
-                sum = eval(sum); 
+                const processedSum = sum.replace(/\^/g, "**");
+                sum = eval(processedSum);
                 showCalculations(sum);
-                isResultShown = true; 
+                isResultShown = true;
             } catch (error) {
                 alert('Invalid Expression');
                 clearInput();
