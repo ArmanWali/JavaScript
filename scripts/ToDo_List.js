@@ -1,4 +1,4 @@
-const todoList = [{name:'', dueDate:''}];
+const todoList = [{name:'Home Work', dueDate:'25-01-2025'}];
 
 function renderTodoList() {
     let todoHTML = '';
@@ -21,7 +21,6 @@ function renderTodoList() {
 
 }
 
-
 function todofunc() {
     const inputElement = document.querySelector('.todo-input');
     const dateInputElement = document.querySelector('.js-dueDateInput');
@@ -29,8 +28,6 @@ function todofunc() {
     const dueDate = dateInputElement.value;
 
     todoList.push({name, dueDate});
- 
-    inputElement.value = '';
-
     renderTodoList();
+    inputElement.value = '';
 }
