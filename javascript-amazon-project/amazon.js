@@ -1,3 +1,5 @@
+ import {cart} from '../data/cart.js';
+ 
  let productsHTML = '';
 
  products.forEach( (products) => {
@@ -75,7 +77,7 @@
         productId: productId,
         quantity: 1
       });
-    }
+    } 
 
     let cartQuatity = 0;
 
