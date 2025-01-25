@@ -60,8 +60,8 @@
 
   let cartQuatity = 0;
 
-  cart.forEach((item) => {
-    cartQuatity += item.quantity;
+  cart.forEach((cartItem) => {
+    cartQuatity += cartItem.quantity;
   });
 
   document.querySelector('.js-cart-quantity').innerHTML = cartQuatity;
