@@ -2,6 +2,7 @@ import { cart, removeFromCart, updateDeliveryOption } from "../../data/cart.js";
 import { products, getProduct } from "../../data/products.js";
 import { deliveryOptions, getDeliveryOption } from "../../data/deliveryOptions.js";
 import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';
+import {renderPaymentSummary} from './paymentSummary.js';
 
 
 export function renderOrderSummay(){
@@ -33,7 +34,7 @@ export function renderOrderSummay(){
 
                     <div class="cart-item-details">
                     <div class="product-name">
-                        ${matchingProduct.name};
+                        ${matchingProduct.name}
                     </div>
                     <div class="product-price">
                         $${(matchingProduct.priceCents / 100).toFixed(2)}
@@ -107,6 +108,8 @@ export function renderOrderSummay(){
             const container = document.querySelector(`
                 .js-cart-item-container-${productId}`);
             container.remove();
+
+            renderPaymentSummary();
         });
     });
 
@@ -115,6 +118,7 @@ export function renderOrderSummay(){
             const {productId, deliveryOptionId} = element.dataset;
             updateDeliveryOption(productId, deliveryOptionId);
             renderOrderSummay();
+            renderPaymentSummary();
         });
     });
 }
