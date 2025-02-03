@@ -3,6 +3,7 @@ import { products, getProduct } from "../../data/products.js";
 import { deliveryOptions, getDeliveryOption } from "../../data/deliveryOptions.js";
 import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';
 import {renderPaymentSummary} from './paymentSummary.js';
+import { formatCurrency } from "../utils/money.js";
 
 
 export function renderOrderSummay(){
@@ -37,7 +38,7 @@ export function renderOrderSummay(){
                         ${matchingProduct.name}
                     </div>
                     <div class="product-price">
-                        $${(matchingProduct.priceCents / 100).toFixed(2)}
+                        $${formatCurrency(matchingProduct.priceCents)}
                     </div>
                     <div class="product-quantity">
                         <span>
@@ -71,7 +72,7 @@ export function renderOrderSummay(){
             const deliveryDate = today.add(deliveryOption.deliveryDays, 'days');
             const dateString = deliveryDate.format('dddd, MMMM, D');
 
-            const priceString = deliveryOption.priceCents === 0 ? 'FREE' : `$${(deliveryOption.priceCents/100).toFixed(2)} -`;
+            const priceString = deliveryOption.priceCents === 0 ? 'FREE' : `$${formatCurrency(deliveryOption.priceCents)} -`;
 
             const isChecked = deliveryOption.id === cartItem.deliveryOptionId;
 
