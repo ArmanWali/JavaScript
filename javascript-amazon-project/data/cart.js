@@ -24,16 +24,16 @@ function saveToStorage(){
 }
 
 export function addToCart(productId){
-  let machingItem;
+  let matchingItem;
 
   cart.forEach((cartItem) => {
     if (productId === cartItem.productId){
-      machingItem = cartItem;
+      matchingItem = cartItem;
     }
   });
   
-  if (machingItem){
-    machingItem.quantity += 1;
+  if (matchingItem){
+    matchingItem.quantity += 1;
   }
   else{
     cart.push({
@@ -62,15 +62,15 @@ export function addToCart(productId){
  }
 
 export function updateDeliveryOption(productId, deliveryOptionId){
-   let machingItem;
+   let matchingItem;
 
    cart.forEach((cartItem) => {
       if (productId === cartItem.productId){
-      machingItem = cartItem;
+      matchingItem = cartItem;
       }
    });
 
-   machingItem.deliveryOptionId = deliveryOptionId;
+   matchingItem.deliveryOptionId = deliveryOptionId;
 
    saveToStorage();
  }

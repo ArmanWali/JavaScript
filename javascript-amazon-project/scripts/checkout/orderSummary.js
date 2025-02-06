@@ -6,7 +6,7 @@ import {renderPaymentSummary} from './paymentSummary.js';
 import { formatCurrency } from "../utils/money.js";
 
 
-export function renderOrderSummay(){
+export function renderOrderSummary(){
     let cartSummaryHTML = '';
 
     cart.forEach((cartItem) => {
@@ -23,7 +23,7 @@ export function renderOrderSummay(){
         const dateString = deliveryDate.format('dddd, MMMM, D');
 
         cartSummaryHTML += `
-            <div class="cart-item-container 
+            <div class="cart-item-container js-cart-item-container
             js-cart-item-container-${matchingProduct.id}">
                 <div class="delivery-date">
                     Delivery date: ${dateString}
