@@ -10,6 +10,29 @@ export function getProduct(productId){
   return matchingProduct;
 }
 
+// If we want to import products from backend
+
+/*
+export let products = [];
+
+export function loadProducts(){
+  const xhr = new XMLHttpRequest();
+
+  xhr.addEventListener('load', () => {
+    products = JSON.parse(xhr.response).map((productDetails) => {
+      if (productDetails.type === 'clothing'){
+        return new ClothingProduct(productDetails);
+      }
+      return new Product(productDetails);
+    });
+  });
+
+  xhr.open('GET', 'https://supersimplebackend.dev/products');
+  xhr.send();
+}
+loadProducts();
+*/
+
 export const products = [
   {
     id: "e43638ce-6aa0-4b85-b27f-e1d07eb678c6",
